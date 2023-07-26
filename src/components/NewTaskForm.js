@@ -3,7 +3,6 @@ import { useState } from "react";
 function NewTaskForm({ categories, onTaskFormSubmit }) {
   const [text, setText] = useState("");
   const [category, setCategory] = useState(categories[0]);
-  const [id, setId] = useState(1); // Start with 1 as the initial ID
 
   const handleTextChange = (event) => {
     setText(event.target.value);
@@ -15,11 +14,10 @@ function NewTaskForm({ categories, onTaskFormSubmit }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newTask = { id, text, category }; // Include the ID in the newTask object
+    const newTask = { text, category };
     onTaskFormSubmit(newTask);
     setText("");
     setCategory(categories[0]);
-    setId((prevId) => prevId + 1); // Increment the ID for the next task
   };
 
   const categoryOptions = categories
@@ -55,5 +53,4 @@ function NewTaskForm({ categories, onTaskFormSubmit }) {
     </form>
   );
 }
-
 export default NewTaskForm;

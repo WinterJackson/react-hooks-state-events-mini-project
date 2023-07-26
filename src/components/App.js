@@ -39,7 +39,7 @@ const App = () => {
         categories={CATEGORIES}
         onTaskFormSubmit={handleTaskFormSubmit}
       />
-      <TaskList tasks={filteredTasks} onTaskDelete ={onTaskDelete} />
+      <TaskList tasks={filteredTasks} onTaskDelete={onTaskDelete} />
     </div>
   );
 };

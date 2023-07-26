@@ -1,8 +1,7 @@
-import React from 'react';
-import Task from './Task';
+import React from "react";
+import Task from "./Task";
 
 const TaskList = ({ tasks, onTaskDelete }) => {
-  
   return (
     <div className="tasks">
       {tasks.map((task) => (
